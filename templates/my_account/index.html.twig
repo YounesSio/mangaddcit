@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon compte{% endblock %}
+
+{% block body %}
+    {% for flashError in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+    {% endfor %}
+    <div class="row" style="padding-top : 30px;padding-bottom : 10px">
+        <div class="col-6 offset-3">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <h1>Mon compte</h1>
+
+                        <p>Bonjour {{ app.user.fullname }} !</p>
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
