@@ -9,6 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 use Symfony\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use App\Repository\ArticleRepository;
 
 
 class HomeController extends AbstractController
@@ -16,13 +17,11 @@ class HomeController extends AbstractController
     /**
      * @Route("/home", name="home")
      */
-    public function home(Request $request) : Response
+    public function home(ArticleRepository $repo) : Response
     {
         //$userName = dump($this->getUser()->getUsername());
 
-        return $this->render('home/index.html.twig', [
-            'controller_name' => 'HomeController'
-        ]);
+        return $this->render('home/index.html.twig',['articles' => $repo->findAll()]);
         
     }
 }

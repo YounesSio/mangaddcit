@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ArticlesController!{% endblock %}
+
+{% block body %}
+<div class="jumbotron text-center">
+    <h1>Mon premier formulaire</h1>
+    <p>Un formulaire d'article</p>
+</div>
+<div class="container">
+    <div class="row">
+        <table>
+            <tbody>
+            <tr>
+                <th>Nom :</th>
+                <td>{{ article.name }}</td>
+            </tr>
+            <tr>
+                <th>Numéro :</th>
+                <td>{{ article.number }}</td>
+            </tr>
+            <tr>
+                <th>Auteur :</th>
+                <td>{{ article.author }}</td>
+            </tr>
+            <tr>
+                <th>Description :</th>
+                <td>{{ article.description }}</td>
+            </tr>
+            <tr>
+                <th>Image :</th>
+                <td><img src={{ article.picture }} alt="Bootstrap" class="img-rounded"></td>
+                
+            </tr>
+            <tr>
+                <th>Edition :</th>
+                <td>{{ article.edition }}</td>
+            </tr>
+            <tr>
+                <th>Editeur :</th>
+                <td>{{ article.editor }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

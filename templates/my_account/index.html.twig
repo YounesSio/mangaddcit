@@ -12,8 +12,26 @@
                 <div class="card-body">
                     <h1>Mon compte</h1>
 
-                        <p>Bonjour {{ app.user.fullname }} !</p>
-                        
+                    {# <p>Bonjour {{ app.user.email }} !</p>
+                    <p>Bonjour {{ user.email }} !</p> #}
+                    {{ form_start(myAccountForm) }}
+                    {{ form_row(myAccountForm.fullName, {
+                            label: "Nom"
+                        }) }}
+
+                        {{ form_row(myAccountForm.username, {
+                            label: "Pseudo"
+                        }) }}
+                       
+                        {{ form_row(myAccountForm.email, {
+                            label: 'Adresse email'
+                        }) }}
+
+                        <a href="/reset-password">Changer le mot de passe</a><br/><br/>
+
+                        <button type="submit" class="btn btn-primary">Enregistrer</button>
+
+                    {{ form_end(myAccountForm) }}
                 </div>
             </div>
         </div>
